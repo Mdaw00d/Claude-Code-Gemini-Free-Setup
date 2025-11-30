@@ -1,39 +1,53 @@
-⭐ Claude Code + Gemini Free Setup (Windows Edition Easy Guide)
+🚀 Claude Code + Gemini Full Setup (Windows Guide)
 
-Follow these steps exactly. Just copy-paste where needed.
+This guide helps you set up Claude-Code + Gemini Models together using claude-code and claude-code-router.
 
-🔹 Step 1: Get Your FREE Google API Key
+🔥 STEP 0 — Confirm Node.js
 
-Go to Google AI Studio
+Open PowerShell and run:
 
-Click Get API Key
-
-Sign in with your Google account
-
-Click Create API Key
-
-Copy your key (looks like):
-
-AIzaSyAaBbCcDd...
+node --version
 
 
-You will need it in Step 2.
+If your Node.js version is not 18+, install it from:
+👉 https://nodejs.org
 
-🔹 Step 2: Setup (Windows Friendly)
+🔥 STEP 1 — GET GOOGLE API KEY
 
-Open PowerShell (Run as Administrator).
+Open: https://aistudio.google.com
 
-1. Install the required tools
+Click → Get API Key
+
+Click → Create API Key
+
+Copy the key (example):
+
+AIzaSy........
+
+🔥 STEP 2 — INSTALL REQUIRED TOOLS
+
+Open PowerShell (Run as Administrator) and run:
+
 npm install -g @anthropic-ai/claude-code @musistudio/claude-code-router
 
-2. Create config folders:
-mkdir "$env:USERPROFILE\.claude-code-router"; mkdir "$env:USERPROFILE\.claude"
+🔥 STEP 3 — CREATE CONFIG FOLDERS
 
-3. Create the router configuration file
+Open PowerShell (normal mode) and run:
 
-Copy-paste this entire block into PowerShell:
+mkdir $HOME/.claude-code-router
+mkdir $HOME/.claude
 
-@"
+🔥 STEP 4 — CREATE CONFIG.JSON (WINDOWS VERSION)
+
+On Windows, cat << EOF doesn’t work, so we’ll use Notepad.
+
+Run:
+
+notepad $HOME/.claude-code-router/config.json
+
+
+Notepad will open → paste this exact JSON:
+
 {
   "LOG": true,
   "LOG_LEVEL": "info",
@@ -62,72 +76,69 @@ Copy-paste this entire block into PowerShell:
     "longContextThreshold": 60000
   }
 }
-"@ | Set-Content "$HOME\.claude-code-router\config.json"
 
-4. Verify file was created
-cat $HOME\.claude-code-router\config.json
 
-🌟 Step 2.5: Add Your API Key (Windows Only)
+✔ Save → Close
 
-Replace YOUR_KEY_HERE with your real key:
+🔥 STEP 5 — SET YOUR API KEY (WINDOWS METHOD)
+
+Open PowerShell (Run as Admin) and run:
 
 [System.Environment]::SetEnvironmentVariable('GOOGLE_API_KEY', 'YOUR_KEY_HERE', 'User')
 
 
-Now CLOSE PowerShell completely and reopen it.
+Replace YOUR_KEY_HERE with your actual Google API Key.
 
-Verify it saved:
+Example:
+
+[System.Environment]::SetEnvironmentVariable('GOOGLE_API_KEY', 'AIzaSyXXXXX...', 'User')
+
+
+⚠️ IMPORTANT:
+Close PowerShell → open a new PowerShell → check:
+
 echo $env:GOOGLE_API_KEY
 
 
-If it prints your key → you're good ✔
+If your key shows → ✅ Perfect!
 
-🔹 Step 3: Verify the Installation
+🔥 STEP 6 — VERIFY EVERYTHING
 
-Run these three commands:
+Run:
 
 claude --version
 ccr version
 echo $env:GOOGLE_API_KEY
 
 
-You should see:
+If all commands return output → ✔ Setup successful
 
-✔ Claude Code version
-✔ CCR version
-✔ Your API key
+🔥 STEP 7 — DAILY WORKFLOW
 
-If all appear → setup is complete.
+Terminal 1:
 
-🔹 Step 4: Daily Workflow (How to Use It)
-Terminal 1 (Start the router first)
 ccr start
 
 
 Wait until you see:
 
-Service started successfully
-
-Terminal 2 (Your coding terminal)
-
-Go to your project:
-mkdir "C:\Users\Your\Desktop\my-project"
-
-cd path\to\your\project
+✔ Service started successfully
 
 
-Then choose one of these:
+Terminal 2:
 
-Option A:
+cd your-project-folder
 ccr code
 
-Option B (activate shell tools):
+
+OR
+
 eval "$(ccr activate)"
 claude
 
-🔹 Step 5: Test It Works
+🔥 VERIFICATION TEST
 
-In Terminal 2:
+Open Terminal:
 
 ccr code
 
@@ -137,12 +148,4 @@ Then type:
 hi
 
 
-Expected response:
-Hey There! How can I assist you?
-
-✔ Claude replies with a greeting
-✔ Your free Gemini backend is now working perfectly
-
-✅ DONE! Your Windows setup is complete.
-
-Let me know if you want a PDF version, Mac/Linux version, or YouTube-style tutorial script!
+If Claude replies → 🎉 Congratulations! FREE CLAUDE CODE + GEMINI WORKING!
