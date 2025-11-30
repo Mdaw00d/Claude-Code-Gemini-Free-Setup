@@ -111,6 +111,7 @@ Service started successfully
 Terminal 2 (Your coding terminal)
 
 Go to your project:
+mkdir "C:\Users\Your\Desktop\my-project"
 
 cd path\to\your\project
 
