@@ -1,8 +1,8 @@
-⭐ Claude Code + Gemini Free Setup (Windows Edition – Easy Guide)
+⭐ Claude Code + Gemini Free Setup (Windows Edition Easy Guide)
 
 Follow these steps exactly. Just copy-paste where needed.
 
-🔹 Step 1 — Get Your FREE Google API Key
+🔹 Step 1: Get Your FREE Google API Key
 
 Go to Google AI Studio
 
@@ -19,7 +19,7 @@ AIzaSyAaBbCcDd...
 
 You will need it in Step 2.
 
-🔹 Step 2 — Setup (Windows Friendly)
+🔹 Step 2: Setup (Windows Friendly)
 
 Open PowerShell (Run as Administrator).
 
@@ -68,7 +68,7 @@ Copy-paste this entire block into PowerShell:
 4. Verify file was created
 cat $HOME\.claude-code-router\config.json
 
-🌟 Step 2.5 — Add Your API Key (Windows Only)
+🌟 Step 2.5: Add Your API Key (Windows Only)
 
 Replace YOUR_KEY_HERE with your real key:
 
@@ -83,7 +83,7 @@ echo $env:GOOGLE_API_KEY
 
 If it prints your key → you're good ✔
 
-🔹 Step 3 — Verify the Installation
+🔹 Step 3: Verify the Installation
 
 Run these three commands:
 
@@ -100,7 +100,7 @@ You should see:
 
 If all appear → setup is complete.
 
-🔹 Step 4 — Daily Workflow (How to Use It)
+🔹 Step 4: Daily Workflow (How to Use It)
 Terminal 1 (Start the router first)
 ccr start
 
@@ -125,7 +125,7 @@ Option B (activate shell tools):
 eval "$(ccr activate)"
 claude
 
-🔹 Step 5 — Test It Works
+🔹 Step 5: Test It Works
 
 In Terminal 2:
 
@@ -138,6 +138,7 @@ hi
 
 
 Expected response:
+Hey There! How can I assist you?
 
 ✔ Claude replies with a greeting
 ✔ Your free Gemini backend is now working perfectly
