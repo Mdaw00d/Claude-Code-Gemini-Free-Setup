@@ -26,9 +26,8 @@ Open PowerShell (Run as Administrator).
 1. Install the required tools
 npm install -g @anthropic-ai/claude-code @musistudio/claude-code-router
 
-2. Create config folders
-mkdir $HOME\.claude-code-router
-mkdir $HOME\.claude
+2. Create config folders:
+mkdir "$env:USERPROFILE\.claude-code-router"; mkdir "$env:USERPROFILE\.claude"
 
 3. Create the router configuration file
 
